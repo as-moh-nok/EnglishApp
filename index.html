@@ -75,25 +75,26 @@
         
           <button type="button" class="btn btn-success " onclick="Next()">Next</button>
 
-    </div>
-    <div class="card">
-      <img src="img/timer.png" id = "status_img" class="card-img-top" alt="...">
     
-      <div class="card-body">
-        <h5 class="card-title">Hurry up!</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary"></a>
+      <div class="card">
+        <img src="img/timer.png" id = "status_img"  style="max-width: ;" class="card-img-top" alt="...">
+      
+        <div class="card-body">
+          <h5 class="card-title">Hurry up!</h5>
+          <p class="card-text"></p>
+         <!-- <a href="#" class="btn btn-primary"></a> -->
+        </div>
       </div>
+      <button type="button" id="timer" class="btn btn-warning">Warning</button>
+
     </div>
-    <button type="button" id="timer" class="btn btn-warning">Warning</button>
-
-
     <script type="text/javascript" src="DB.js"></script>
     <script>
       var que_number = 5;//6-1 number of question in DB
       var round = 0; //number of que
       var current_que_ans = que_ans[round];
       var index_ans = 0;
+      var temp; //for temprory calc
       preprocess(round);
       refresh_page(round);
       
@@ -122,7 +123,7 @@
           item.disabled=false;
           item.setAttribute("onclick","checkWord(this)"); //add 'checkword' function
          }
-         number = 45;
+         number = 45; //start timer again
          //setInterval('Counter()', 1000);
 //         start_timer();
          
@@ -135,9 +136,10 @@
         refresh_page(round);
         
       }
-      var true_number = 0;//number of words user guess true
-      var ans ;
+      var true_guess_number = 0;//number of words user guess true
+      
       var answer_arr;
+      var fill_word_number;
       function preprocess(round){
         true_number = 0;
         current_que_ans = que_ans[round];
@@ -149,8 +151,9 @@
         
        // index_ans = current_que_ans['index'];
 
-        ans = current_que_ans['ans'];
-        answer_arr = ans.split(" ");
+        temp = current_que_ans['ans'];
+        answer_arr = temp.split(" ");
+        fill_word_number = count(currentAns,'----');
 
       }
 
@@ -166,8 +169,8 @@
             
             //input_to_fill[index + i] = content;
             document.getElementById("JayeJadid").value=currentAns.join(" ");
-            true_number = true_number+1;
-            if(true_number == answer_arr.length)
+            true_guess_number = true_guess_number+1;
+            if(true_guess_number == fill_word_number)
             {
               alert("success!")
             }
@@ -177,7 +180,18 @@
 
           alert("Javabe Eshtebah");
        
-      }   
+      } 
+      
+      function count(arr, word){
+        var counter = 0;
+        for(var i =0; i<arr.length;i++){
+          if(arr[i] == word)
+          {
+             counter = counter+1; 
+          }
+        }
+        return counter;
+      }
 /*
       function AyaTooyeArayeHast(arrInput,Kalame)
       {
