@@ -12,8 +12,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-         <h1 id ="hello">Hello, world!</h1>  
-      <div></div>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -42,120 +41,120 @@
     </header>
     <div class="container">
 
-        <h4 id = "h44" class="bg-info">It's no use crying over split milk.</h4>
-          <input id="JayeJadid" type="text" value="جایی که قرار هستش بره"></input>
+        <h4 id = "h44" class="bg-info">Well Come!</h4>
+          <input id="JayeJadid" type="text" value="........"></input>
           
         <div class="row">
-          <div class="col-6">
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
+              <div class="col-3">
+              <button type="button" class="btnn btn-primary">Hello</button>
               </div>
-              <div class="col-6">
-              <button type="button" id="btnclick" class="btn btn-primary " onclick="checkWord(this)">احمد</button><!-- دارم با این المان امتحان میکنم-->
+              <div class="col-3">
+              <button type="button" class="btnn btn-primary " ">Hello</button>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
+              <div class="col-3">
+              <button type="button" class="btnn btn-primary">Hello</button>
               </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
+              <div class="col-3">
+              <button type="button" class="btnn btn-primary">Hello</button>
               </div>              
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="checkWord(this)">فایده</button>
-              </div>              
-            </div>
+        </div> 
+        <div class="row">
+          <div class="col-3">
+          <button type="button" class="btnn btn-primary">Hello</button>
           </div>
-          <div class="col-6">
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="checkWord(this)">اسب</button>
-              </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="checkWord(this)">آمد</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="checkWord(this)">با</button>
-              </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="checkWord(this)">فایده</button>
-              </div>              
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-              <button type="button" class="btn btn-primary">فایده</button>
-              </div>
-              <div class="col-6">
-              <button type="button" onclick="fun(this)" class="btn btn-primary">سعید</button>
-              </div>              
-            </div>
+          <div class="col-3">
+          <button type="button" class="btnn btn-primary " ">Hello</button>
           </div>
-          
-
-        </div>
-
+          <div class="col-3">
+          <button type="button" class="btnn btn-primary">Hello</button>
+          </div>
+          <div class="col-3">
+          <button type="button" class="btnn btn-primary">Hello</button>
+          </div>              
+        </div> 
+        
+          <button type="button" class="btn btn-success " onclick="Next()">Next</button>
 
 
     </div>
-    
+
+    <script type="text/javascript" src="DB.js"></script>
     <script>
-      const que = [ "با","فایده","به","فایده",
-                  "به","احمد","به","اسب",
-                  "به","فایده","به","فایده",
-                  "به","آمد","به","فایده",];
+      var que_number = 5;//6-1 number of question in DB
+      var round = 0; //number of que
+      var current_que_ans = que_ans[round];
+      var index_ans = 0;
+      preprocess(round);
+      refresh_page(round);
+      
+      /*
+      
+      var que = current_que_ans['que'];
+      var half_ans = current_que_ans['half_ans'];
+      var index_ans = que.search(half_ans);
+      ans = current_que_ans['ans'];
+      var ans_arr = ans.split(" ");
+      */
 
-       ChandomiHastim = 1;
-       ans = [
-          "احمد"
-          ,"با"
-          ,"اسب"
-          ,"آمد"
-       ];
-      function checkWord(ElementMoredeNazar){  
-         var content = ElementMoredeNazar.innerHTML;
-        alert(content);
+    
+      function refresh_page(round){
+        //refresh question txt:
+        document.getElementById("h44").innerHTML = current_que_ans['que'];
+        //refresh input:
+        document.getElementById("JayeJadid").value = current_que_ans['half_ans'];
+        //refresh buttons:
+        current_buttons = current_que_ans["buttons"];
+        page_buttons = document.getElementsByClassName("btnn")
+        for(let i = 0; i< current_buttons.length; i++){
+          var item = page_buttons[i];
+          item.innerHTML = current_buttons[i];
+          item.disabled=false;
+          item.setAttribute("onclick","checkWord(this)"); //add 'checkword' function
+         }
 
-
-       
-       if(ans[ChandomiHastim-1]==content)
-       {
-          document.getElementById("JayeJadid").value=content;
-          ElementMoredeNazar.hidden=true;
-          ChandomiHastim++;
-       }
-       else
-       {
-          alert("Javabe Eshtebah");
-       }
-       
-        
-        //alert(document.getElementsById("btnclick"));
       }
 
+      function Next(){
+        round = round +1;
+        //current_que_ans = que_ans[round];
+        preprocess(round);
+        refresh_page(round);
+        
+      }
+
+      function preprocess(round){
+        current_que_ans = que_ans[round];
+        //que = current_que_ans['que'];
+        //half_ans = current_que_ans['half_ans'];
+      
+        currentAns = current_que_ans['half_ans'].split(" ");//save to 
+        var input_to_fill = current_que_ans['que'].split(" ");
+        
+        index_ans = current_que_ans['index'];
+
+      }
+
+      function checkWord(ElementMoredeNazar){ 
+        var content = ElementMoredeNazar.innerHTML;
+        alert(content);
+        var ans = current_que_ans['ans'];
+        var answer_arr = ans.split(" ");
+        for(let i =0; i<answer_arr.length;i++){
+          if(answer_arr[i] == content){
+            currentAns[i] = content;
+            ElementMoredeNazar.disabled=true;
+            
+            //input_to_fill[index + i] = content;
+            document.getElementById("JayeJadid").value=currentAns.join(" ");
+
+            return;
+          }
+        }
+
+          alert("Javabe Eshtebah");
+       
+      }   
+/*
       function AyaTooyeArayeHast(arrInput,Kalame)
       {
         var res = false;
@@ -169,28 +168,14 @@
             }
         }
         return res;
-      }
+      }*/
       
-      function jakhaliSaz()
-      {
-        var tmp = '<input id="JayeJadid#" type="text" value="..."></input>';
-        
-        for(i=0;i<ans.length;i++)
-        {
-          var el="";
-          el=tmp.replace('')
-        }
-      }
+
       
 
     </script>
-    <script>
 
 
-
-
-      
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 
