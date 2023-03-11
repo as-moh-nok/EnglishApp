@@ -1,7 +1,23 @@
 body{
     font-family: vazir;
+    
+    background-image: url("img/back_white.jpg");
+      background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+ 
+}
+.btnn{
+    background-color:darkorange ;
+    color:black;
+    padding:3px;
+    border:1px solid black;
+    margin: 1% ;
+    height:35px ;
+    width:85px ;
+    
 }
 
-.my_btn{
-    
+#timer{
+  
 }
