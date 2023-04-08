@@ -250,11 +250,15 @@
               status_img.src = "img/fail.png";
               document.getElementById("status_txt").innerHTML = "Fail!";
               btn_disable();
+
+              document.getElementById("JayeJadid").value = current_que_ans["ans"]
               //var audio = new Audio("img/fail.mp3");
               //audio.play();
 
         }
       }
+
+
       var MyCounter ;
       function start_timer(){
         MyCounter = setInterval('Counter()', 1000);
