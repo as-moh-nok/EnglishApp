@@ -1,23 +1,32 @@
 body{
     font-family: vazir;
     
-    background-image: url("img/back_white.jpg");
+    background-color:#c5faf3;
       background-attachment: fixed; 
   background-repeat: no-repeat;
   background-size: cover; 
  
 }
 .btnn{
-    background-color:darkorange ;
+    background-color:#34bdeb ;
     color:black;
-    padding:3px;
-    border:1px solid black;
-    margin: 1% ;
+    padding:1px;
+    border-radius: 10%;
+    margin: 0.1% ;
     height:35px ;
     width:85px ;
     
 }
 
+#question_box{
+  margin: 4px;
+  color:#262928;
+  padding:3px;
+  border:1px ;
+}
 #timer{
+  color: aliceblue;
+  background-color: #345feb;
+   ;
   
 }

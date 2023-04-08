@@ -3,43 +3,49 @@ const que_ans = [ //question 1
 "ans":  "play it by ear",
     	"half_ans" : "---- it ---- ----",
     	"buttons": [ "game","with","by", "nose", "ear" ,"hear","show" ,"play"] ,
-"index" : 14
+"index" : 14,
+"image" : "img/idiom1.png"
       },
 //question 2
 {"que": "in fact he’s not right for this role, he has his ---- in ---- ----.",
 "ans": "head in the cloud",
 "half_ans" : "---- in ---- ----",
 "buttons": ["face" ,"the" ,"mind", "sky", "top","head" , "star" ,"cloud"],
-"index" : 12
+"index" : 12,
+"image" : "img/idiom2.png"
        },
 {"que":" teacher’s colourful waistcoats and unusual taste for hats made him a ---- -than- ---- character in the local community.",
  "ans": "larger than life",
- "half_ans" : "---- -than- ----",
+ "half_ans" : "---- than ----",
  "buttons": [ "bigger","life","smaller", "larger", "little" ,"living", "spirit" ,"love"],
-"index" : 12
+"index" : 12,
+"image" : "img/idiom3.png"
          },
          {"que":" I thought it was about time I went over there and ---- ---- ---- branch.",
          "ans": "extended the olive branch",
-         "half_ans" : "---- ---- ---- branch ",
+         "half_ans" : "---- ---- ---- branch",
          "buttons": [ "garlic","a","expanded", "onion", "the" ,"developed","extended" ,"olive"],
-        "index" :12 
+        "index" :12 ,
+        "image" : "img/idiom4.png"
                  },
                 {"que":" first the clue seemed important, but at the end it turned out to be a ---- ---- .",
                  "ans": "red herring",
-                 "half_ans" : "---- ---- ",
+                 "half_ans" : "---- ----",
                  "buttons": [ "raw","hearing","white", "red", "ruffling" ,"herring","selling" ,"handling"],
-                "index" :16 
+                "index" :16 ,
+                "image" : "img/idiom5.png"
                          },
                     
 {"que":" without meaning to ---- my own -----, I came top of the class and no one noticed it before.",
 "ans": " blow my own trumpet",
-"half_ans" : "---- my own ----- ",
+"half_ans" : "---- my own -----",
 "buttons": [ "tantara","puff","blow", "the", "reed" ,"play","piano" ,"trumpet"],
-"index" :4 
+"index" :4 ,
+"image" : "img/idiom6.png"
         },
 {"que":" after vehemently arguing, he discovered his mistake and had to eat ---- ---- before his associates.",
 "ans": "eat humble pie",
-"half_ans" : " eat ---- ----",
+"half_ans" : "eat ---- ----",
 "buttons": [ "cake","cookie","pie", "the", "chocolate" ,"humble","blushing" ,"candy"],
 "index" :16 
         },
@@ -51,7 +57,7 @@ const que_ans = [ //question 1
         },
         {"que":" my daughter feels very bad and is easily upset. If anything goes wrong, she will ---- off ---- ---- .",
         "ans": " fly off the handle",
-        "half_ans" : "---- off ---- ---- ",
+        "half_ans" : "---- off ---- ----",
         "buttons": [ "hand","flow","the", "fly", "rattle" ,"bottle","flab" ,"handdle"],
        "index" :16
                 },

@@ -16,7 +16,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Learn English</a>
+              <img src="img/theme.jpg" style="width: 100px;">
+              <a class="navbar-brand"  href="#"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -25,7 +26,7 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
                   </li>
                   <li class="nav-item">
@@ -33,15 +34,15 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
           </nav>
     </header>
     <div class="container">
-
-        <h4 id = "h44" class="bg-info">Well Come!</h4>
+        <h6 id="question_box">Well Come</h6 >  
+       
           <input id="JayeJadid" type="text" value="........"></input>
           
         <div class="row">
@@ -73,19 +74,19 @@
           </div>              
         </div> 
         
-          <button type="button" class="btn btn-success " onclick="Next()">Next</button>
+          <button type="button" style="background-color: #0811c4; color: azure;" class="btn " onclick="Next()">Next</button>
 
     
-      <div class="card">
-        <img src="img/timer.png" id = "status_img"  style="max-width: ;" class="card-img-top" alt="...">
+      <div class="card" style="max-width: 300px;">
+        <img src="img/timer.png" id = "status_img"  style="max-width: 200px ;min-width: 195px;" class="card-img-top" alt="...">
       
         <div class="card-body">
-          <h5 class="card-title">Hurry up!</h5>
-          <p class="card-text"></p>
-         <!-- <a href="#" class="btn btn-primary"></a> -->
+          <h5 id = "status_txt" class="card-title">Hurry up!</h5>
+          <p id = 'pointer' class="card-text"> Your Point: 0</p>
+          <a id="help" class="btn btn-primary" onclick="help()">Help</a> 
         </div>
       </div>
-      <button type="button" id="timer" class="btn btn-warning">Warning</button>
+      <button type="button" id="timer" class="btn btn-warning" >Timer</button>
 
     </div>
     <script type="text/javascript" src="DB.js"></script>
@@ -95,6 +96,7 @@
       var current_que_ans = que_ans[round];
       var index_ans = 0;
       var temp; //for temprory calc
+      var point = 0;
       preprocess(round);
       refresh_page(round);
       
@@ -111,7 +113,7 @@
     
       function refresh_page(round){
         //refresh question txt:
-        document.getElementById("h44").innerHTML = current_que_ans['que'];
+        document.getElementById("question_box").innerHTML = current_que_ans['que'];
         //refresh input:
         document.getElementById("JayeJadid").value = current_que_ans['half_ans'];
         //refresh buttons:
@@ -123,25 +125,32 @@
           item.disabled=false;
           item.setAttribute("onclick","checkWord(this)"); //add 'checkword' function
          }
-         number = 45; //start timer again
-         //setInterval('Counter()', 1000);
-//         start_timer();
+         //refresh status img and txt:
+         var status_img = document.getElementById("status_img");
+         status_img.src = "img/timer.png";
+         document.getElementById("status_txt").innerHTML = "Hurry up!";
+         //refresh timer
+         number = 32;
+         start_timer();
+         //refresh point:
          
+         //reff
+
       }
 
       function Next(){
         round = round +1;
-        //current_que_ans = que_ans[round];
         preprocess(round);
         refresh_page(round);
         
       }
+
       var true_guess_number = 0;//number of words user guess true
       
       var answer_arr;
       var fill_word_number;
       function preprocess(round){
-        true_number = 0;
+        true_guess_number = 0;
         current_que_ans = que_ans[round];
         //que = current_que_ans['que'];
         //half_ans = current_que_ans['half_ans'];
@@ -172,7 +181,24 @@
             true_guess_number = true_guess_number+1;
             if(true_guess_number == fill_word_number)
             {
-              alert("success!")
+              //successful status and alert:
+              
+              var status_img = document.getElementById("status_img");
+              status_img.src = "img/success.gif";
+              document.getElementById("status_txt").innerHTML = "Success!";
+              point = point +1;
+
+              var audio = new Audio("img/success.mp3");
+              audio.play();
+              temp = document.getElementById("pointer");
+              temp.innerHTML = "Your point:"+ point ;
+              btn_disable();
+              
+
+ 
+
+              stop_timer();
+              
             }
             return;
           }
@@ -182,6 +208,11 @@
        
       } 
       
+      function help(){
+        temp = document.getElementById("status_img");
+        temp.src = current_que_ans['image'];
+      }
+
       function count(arr, word){
         var counter = 0;
         for(var i =0; i<arr.length;i++){
@@ -192,45 +223,48 @@
         }
         return counter;
       }
-/*
-      function AyaTooyeArayeHast(arrInput,Kalame)
-      {
-        var res = false;
-
-        for(i=0;i<arrInput.length;i++)
-        {
-            if(arrInput[i]==Kalame)
-            {
-              res=true;
-              break;
-            }
-        }
-        return res;
-      }*/
-      
+      function btn_disable(){
+        page_buttons = document.getElementsByClassName("btnn")
+        for(let i = 0; i< current_buttons.length; i++){
+          var item = page_buttons[i];
+          
+          item.disabled=true;
+      }
+    }
 
    </script>
    <!-- <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
       <div class="progress-bar progress-bar-striped" style="width: 10%"></div>
 -->
     <script>
-      var number=40 ;
+      var number=30 ;
       function Counter(){
         var mybox = document.getElementById("timer");
         if(number > 0){      
           number = number - 1;
           mybox.innerHTML = number;
         }
+        else{
+          //fali status and alert:
+          var status_img = document.getElementById("status_img");
+              status_img.src = "img/fail.png";
+              document.getElementById("status_txt").innerHTML = "Fail!";
+              btn_disable();
+              //var audio = new Audio("img/fail.mp3");
+              //audio.play();
+
+        }
       }
       var MyCounter ;
       function start_timer(){
         MyCounter = setInterval('Counter()', 1000);
       }
-      setInterval('Counter()', 1000);
-         function stop_timer(){
-            number = 0;
-            clearInterval(MyCounter);
-         }
+      MyCounter = setInterval('Counter()', 1000);
+      
+      function stop_timer(){
+          //number = 0;
+          clearInterval(MyCounter);
+        }
 
      
     </script>
