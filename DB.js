@@ -1,3 +1,4 @@
+
 const que_ans = [ //question 1
 {"que": "what time shall we go shopping? Let’s see how the weather looks and ---- it ----   ---- .",
 "ans":  "play it by ear",
@@ -47,31 +48,37 @@ const que_ans = [ //question 1
 "ans": "eat humble pie",
 "half_ans" : "eat ---- ----",
 "buttons": [ "cake","cookie","pie", "the", "chocolate" ,"humble","blushing" ,"candy"],
-"index" :16 
+"index" :16 ,
+"image" : "img/idiom7.png"
+
         },
 {"que":" the workers were promised that they would not lose their jobs because of the merger. Later they found out that they had been ---- down ---- ---- .",
 "ans": " sold down the river",
 "half_ans" : "---- down ---- ---- ",
 "buttons": [ "stuck","sea","river", "the", "sold" ,"road","smoke" ,"ski"],
-"index" :24
+"index" :24,
+"image" : "img/idiom8.png"
         },
         {"que":" my daughter feels very bad and is easily upset. If anything goes wrong, she will ---- off ---- ---- .",
         "ans": " fly off the handle",
         "half_ans" : "---- off ---- ----",
         "buttons": [ "hand","flow","the", "fly", "rattle" ,"bottle","flab" ,"handdle"],
-       "index" :16
+       "index" :16,
+       "image" : "img/idiom9.png"
                 },
        {"que":" he’s fresh out of dental school and trying to set up a practise. But he does good work, and he won’t ----- you an ---- ---- a ---- for it like most other dentists.",
         "ans": " cost you an arm and a leg  ",
         "half_ans" : "---- you an ---- ---- a ----  ",
         "buttons": [ "catch","and","price", "cost", "ear" ,"leg","cast" ,"arm"],
-       "index" :22
+       "index" :22,
+       "image" : "img/idiom10.png"
                 },
        {"que":" your lost? don’t worry just ask Jenny.she ---- the ---- very well.",
         "ans": "knows the rope",
         "half_ans" : "---- the ---- ",
         "buttons": [ "tight","ripe","study", "knows", "understand" ,"rope","needle" ,"ride"],
-       "index" :9
+       "index" :9,
+       "image" : "img/idiom11.png"
                 },
        {"que":" conflicting countries should work on the way to ---- the ---- in order to avoid going to war.",
         "ans": "bury the hatchet",

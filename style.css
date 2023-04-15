@@ -1,32 +1,46 @@
 body{
     font-family: vazir;
     
-    background-color:#c5faf3;
+    background-color:#f9c656;
       background-attachment: fixed; 
   background-repeat: no-repeat;
   background-size: cover; 
  
 }
 .btnn{
-    background-color:#34bdeb ;
+    background-color: #debad7;
+    
     color:black;
     padding:1px;
     border-radius: 10%;
-    margin: 0.1% ;
+    margin: 8% 1% 8% 1%;
+
     height:35px ;
-    width:85px ;
+    width:75px ;
     
 }
 
+#help{
+  background-color: #27cca5;
+
+}
+
+#next_btn{
+  margin: 0.2cm 0.2cm 0.2cm 0.2cm;
+  height:45px ;
+  width:95px ;
+  border-radius: 10%;
+}
+
 #question_box{
-  margin: 4px;
+  margin:0.3cm;
   color:#262928;
   padding:3px;
   border:1px ;
 }
 #timer{
   color: aliceblue;
-  background-color: #345feb;
+  background-color: #b35da3;
    ;
   
 }
