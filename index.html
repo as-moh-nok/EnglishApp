@@ -22,80 +22,49 @@
       green_blue: #51d8b8
       
     -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <img src="img/theme2.jpg" style="width: 60px;">
-              <a class="navbar-brand"  href="#"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <div class="container">
-        <h6 id="question_box">Well Come</h6 >  
-       
-          <input id="JayeJadid" type="text" value="........"></input>
-          
-        <div class="row">
-              <div class="col-3">
-              <button type="button" class="btnn">Hello</button>
-              </div>
-              <div class="col-3">
-              <button type="button" class="btnn">Hello</button>
-              </div>
-              <div class="col-3">
-              <button type="button" class="btnn">Hello</button>
-              </div>
-              <div class="col-3">
-              <button type="button" class="btnn">Hello</button>
-              </div>              
-        </div> 
-        <div class="row">
-          <div class="col-3">
-          <button type="button" class="btnn ">Hello</button>
-          </div>
-          <div class="col-3">
-          <button type="button" class="btnn " ">Hello</button>
-          </div>
-          <div class="col-3">
-          <button type="button" class="btnn ">Hello</button>
-          </div>
-          <div class="col-3">
-          <button type="button" class="btnn ">Hello</button>
-          </div>              
-        </div> 
-        
-          <button id="next_btn" type="button" style="background-color: #92187b; color: azure;"  onclick="Next()">Next</button>
 
     
-      <div class="card" style="max-width: 300px; min-height: 350px;">
-        <img src="img/timer.png" id = "status_img"  style="max-width: 200px ;min-width: 195px;max-height: 300px;" class="card-img-top" alt="...">
+
+
+    <header>
+      <div class="navbar">
+        <img src="img/theme2.jpg">
+        <div style="width: 50px;"></div>
+        <button type="button" id="score" class="nav_btns btn " >Score: 0</button>
+        <button type="button" id="timer" class="nav_btns btn " >31</button>
+        
+        <img id="help" onclick="help()" src="img/help-icon.png">
+       </div>
+    </header>
+
+    <img id = "status_img" src="img/timer.png">
+    
+  
+
       
-        <div class="card-body">
-          <h5 id = "status_txt" class="card-title">Hurry up!</h5>
-          <p id = 'scoreer' class="card-text"> Your score: 0</p>
-          <a id="help" class="btn btn-primary" onclick="help()">Help</a> 
+
+      <div class="container">
+        <h6 id="question_box" style="color: #C7CED3; margin: auto;">Well Come</h6 >  
+       
+          <input style="margin: 10px 10px 25px 10px; padding: 2%; font-weight: bold; border-radius: 5%;" id="JayeJadid" type="text" value="........"></input>
+          
+ 
+        
+        <div class="button-container">
+          <button type="button" class="btnn ">Button 1</button>
+          <button type="button" class="btnn ">Button 2</button>
+          <button type="button" class="btnn ">Button 3</button>
+          <button type="button" class="btnn ">Button 4</button>
+          <button type="button" class="btnn ">Button 5</button>
+          <button type="button" class="btnn ">Button 6</button>
+          <button type="button" class="btnn ">Button 7</button>
+          <button type="button" class="btnn ">Button 8</button>
         </div>
-      </div>
-      <button type="button" id="timer" class="btn btn-warning" >Timer</button>
+
+
+        <button id="next_btn" type="button"  onclick="Next()">Next</button>
+          
+          
 
     </div>
     <script type="text/javascript" src="DB.js"></script>
@@ -139,7 +108,7 @@
       function refresh_page(round){
 
         //refresh question txt:
-        document.getElementById("question_box").innerHTML = current_que_ans['que'];
+        document.getElementById("question_box").innerHTML = (round + 1) + ". " +current_que_ans['que'];
         //refresh input:
         document.getElementById("JayeJadid").value = current_que_ans['half_ans'];
         //refresh buttons:
@@ -154,12 +123,11 @@
          //refresh status img and txt:
          var status_img = document.getElementById("status_img");
          status_img.src = "img/timer.png";
-         document.getElementById("status_txt").innerHTML = "Hurry up!";
+         //document.getElementById("status_txt").innerHTML = "Hurry up!";
         //refresh timer:
          number = 32;
          start_timer();  
 
-         //refresh score:
          
         
 
@@ -183,19 +151,8 @@
             if(true_guess_number == fill_word_number)
             {
               //successful status and alert:
-              
-              var status_img = document.getElementById("status_img");
-              status_img.src = "img/success.gif";
-              document.getElementById("status_txt").innerHTML = "Success!";
-              score = score +1;
-
-              var audio = new Audio("img/success.mp3");
-              audio.play();
-              temp = document.getElementById("scoreer");
-              temp.innerHTML = "Your score:"+ score ;
-              btn_disable();
-
-              stop_timer();              
+              success_status();
+               
             }
             return;
           }
@@ -206,13 +163,29 @@
       function fail_status(){
         var status_img = document.getElementById("status_img");
         status_img.src = "img/fail1.jpg";
-        document.getElementById("status_txt").innerHTML = "Fail!";
+        //document.getElementById("status_txt").innerHTML = "Fail!";
         btn_disable();
 
         document.getElementById("JayeJadid").value = current_que_ans["ans"]
         stop_timer();
         var audio = new Audio("img/fail.mp3");
         audio.play();
+      }
+      function success_status(){
+        var status_img = document.getElementById("status_img");
+              status_img.src = "img/success.gif";
+              //document.getElementById("status_txt").innerHTML = "Success!";
+              score = score +1;
+
+              var audio = new Audio("img/success.mp3");
+              audio.play();
+              scoreButton = document.getElementById("score");
+              //mybox.innerHTML = number;
+              scoreButton.innerHTML = "Score: "+ score ;
+              //temp.innerHTML =  score_txt;
+              btn_disable();
+
+              stop_timer(); 
       }
       
       /*------------------------BUTTON FUNCTION-----------------------------*/
