@@ -27,14 +27,35 @@
 
 
     <header>
-      <div class="navbar">
+  <!--    <div class="navbar">
         <img src="img/theme2.jpg">
-        <div style="width: 50px;"></div>
+        <div style="width: 25px;"></div>
         <button type="button" id="score" class="nav_btns btn " >Score: 0</button>
         <button type="button" id="timer" class="nav_btns btn " >31</button>
         
         <img id="help" onclick="help()" src="img/help-icon.png">
+        <div>
+          <img src="img/heart.png"> 1
+        </div>
        </div>
+    -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="img/theme2.jpg">
+        <div style="width: 25px;"></div>
+      </div>
+      <div class="navbar-right"></div>
+        <button type="button" id="score" class="nav_btns btn " >Score: 0</button>
+        <button type="button" id="timer" class="nav_btns btn " >31</button>
+
+        <img id="help" onclick="help()" src="img/help-icon.png">
+        <div class="navbar-heart">
+          <img src="img/heart.png">
+          <span id="heart_number">1</span>
+        </div>
+      </div>
+    </nav>
+    
     </header>
 
     <img id = "status_img" src="img/timer.png">
@@ -46,7 +67,7 @@
       <div class="container">
         <h6 id="question_box" style="color: #C7CED3; margin: auto;">Well Come</h6 >  
        
-          <input style="margin: 10px 10px 25px 10px; padding: 2%; font-weight: bold; border-radius: 5%;" id="JayeJadid" type="text" value="........"></input>
+          <input style="margin: 10px 10px 25px 10px; padding: 2% 10% 2% 2%; font-weight: bold; border-radius: 5%;" id="JayeJadid" type="text" value="........"></input>
           
  
         
@@ -63,6 +84,7 @@
 
 
         <button id="next_btn" type="button"  onclick="Next()">Next</button>
+        
           
           
 
@@ -85,11 +107,16 @@
 
     /*------------------------PROCCESS OF EACH PAGE -----------------------------*/
       var true_guess_number = 0;//number of words user guess true
-      
+      var false_guess_number = 0;//number of words user guess false
+      var chance = 3;
+
       var answer_arr;//anwer that print of inputbox
       var fill_word_number; //number of '----' in question
       function preprocess(round){
         true_guess_number = 0;
+        false_guess_number = 0;
+        chance = 3;
+
         current_que_ans = que_ans[round];
         //que = current_que_ans['que'];
         //half_ans = current_que_ans['half_ans'];
@@ -123,13 +150,11 @@
          //refresh status img and txt:
          var status_img = document.getElementById("status_img");
          status_img.src = "img/timer.png";
-         //document.getElementById("status_txt").innerHTML = "Hurry up!";
-        //refresh timer:
-         number = 32;
-         start_timer();  
-
-         
         
+        //refresh navbar:
+        document.getElementById("heart_number").innerHTML = chance;
+         number = 32; //refresh timer:
+         start_timer();   
 
       }
 
@@ -157,7 +182,20 @@
             return;
           }
         }
-          alert("Javabe Eshtebah");       
+        false_guess_number += 1;
+        chance = chance - 1;
+
+        if (chance > -1)
+        {
+          document.getElementById("heart_number").innerHTML = chance;
+          alert("Oops! Incorrect answer! \n You can just try " + chance + " more choices");
+        }
+        else
+        {
+          fail_status();
+        }
+        
+
       } 
 
       function fail_status(){
@@ -200,6 +238,8 @@
       function help(){
         temp = document.getElementById("status_img");
         temp.src = current_que_ans['image'];
+        chance = chance - 1;
+        document.getElementById("heart_number").innerHTML = chance;
       }
 
       function count(arr, word){

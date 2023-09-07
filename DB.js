@@ -4,7 +4,7 @@ const que_ans = [ //question 1
 "ans":  "play it by ear",
         "half_ans" : "---- it ---- ----",
         "buttons": [ "game","with","by", "nose", "ear" ,"hear","show" ,"play"] ,
-"index" : 14,
+"index" : 14, //index of first ----
 "image" : "img/idiom1.png"
       },
 //question 2
@@ -106,7 +106,7 @@ const que_ans = [ //question 1
                "half_ans": "---- the ----",
                 "buttons": [ "beat","battle","ball", "bullet", "ladder","bite","leader","blood"],
                "index" :4,
-               "image": "img/idiom15.png"
+               "image": "img/idiom15.PNG"
                         },
                {"que":"If you were still living at home, you knew the experience of being ---- the ---- act by parents when these calls started appearing on the phone bill.",
                 "ans": "read the riot act",
@@ -122,20 +122,112 @@ const que_ans = [ //question 1
                        "index" :18,
                        "image": "img/idiom17.png"
                                 },
-                       {"que":"If you don't believe me, go to his room and talk to him to hear it ---- from ---- ----’s ---- .",
-                        "ans": "straight from the horse’s mouth",
+                       {"que":"If you don't believe me, go to his room and talk to him to hear it ---- from ---- ---- ’s ---- .",
+                        "ans": "straight from horse ’s mouth",
                        "half_ans" : "---- from ---- ‘s ----",
                         "buttons": [ "through","house","straight", "sheep", "horse" ,"the","mouth" ,"lips"],
                        "index" :17,
                        "image": "img/idiom18.png"
                                 },
+
                        {"que":"It's best to always take what he says with a ----- of ---- what he just does is to exaggerate everything.",
                         "ans": "pinch of salt",
                        "half_ans" : "---- of ----",
                         "buttons": [ "salt","stuck","pinch", "gave", "stick" ,"gate","sack" ,"gut"],
                        "index" :11,
                        "image": "img/idiom19.png"
+                       
                                 },
+
+        
+                        {"que":"well, I can’t see Jenny today. oh she ---- the ---- yesterday for her bad performance.",
+                                "ans": "got the sack",
+                               "half_ans" : "---- the ----",
+                                "buttons": [ "went","stuck","gave", "got", "stick" ,"gate","sack" ,"gut"],
+                               "index" :9,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom20.png"
+                                        },             
+                              {"que":"all his friends were getting married, so he decided to ---- on the ---- and get married too.",
+                                "ans": "jump on the bandwagon",
+                               "half_ans" : "---- on the ----",
+                                "buttons": [ "bandage","justify","jump", "band", "bench" ,"jack","sack" ,"bandwagon"],
+                               "index" :12,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom21.png"
+                                        }, 
+                              {"que":"websites on health and fitness are a ---- a ---- nowadays, but not all of them are accurate and have correct information.",
+                                "ans": "a dime a dozen",
+                               "half_ans" : "a ---- a ----",
+                                "buttons": [ "dam","dagger","dump", "dime", "dozen" ,"doz","die" ,"thousand"],
+                               "index" :8,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom22.png"
+                                        },
+                                  {"que":"the hospital staff ---- out all the ---- to make sure the children had a wonderful day.",
+                                "ans": "pulled out all the stops",
+                               "half_ans" : "---- out all the ----",
+                                "buttons": [ "pulled","put","packed", "stops", "stocks" ,"taps","steps" ,"spots"],
+                               "index" :4,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom23.png"
+                                        },
+                                 {"que":"we tried that new Indian restaurant last night. The food was excellent, and the prices weren’t too bad either, so we got a lot of ---- for our ----.",
+                                "ans": "bang for our bucks",
+                               "half_ans" : "---- for our ----",
+                                "buttons": [ "dang","bug","bang", "backs", "bunches" ,"bucks","books" ,"bucket"],
+                               "index" :26,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom24.JPG"
+                                        },
+                               {"que":"he saw the ---- on the ---- and left the company for a new job before he and many others were laid off.",
+                                "ans": "writing on the wall",
+                               "half_ans" : "---- on the ----",
+                                "buttons": [ "reading","well","warning", "waiting", "writing" ,"wall","rapping" ,"watching"],
+                               "index" :4,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom25.png"
+                                        },
+                               {"que": "actually I don't feel like hanging out today. I'm ---- a bit under the ----.",
+                                "ans": "feeling a bit under the weather",
+                               "half_ans" : "---- a bit under the ----",
+                                "buttons": [ "feeding","feeling"," wheatear", "falling", "weather" ,"either","having" ,"weapon"],
+                               "index" :10,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom26.png"
+                                        },
+                               {"que":"everyone thought that he had the match ---- the ----, but his opponent suddenly put in a tremendous performance and snatched it away from him.",
+                                "ans": "in the bag",
+                               "half_ans" : "---- the ----",
+                                "buttons": [ "on","cat","pocket", "in", "dog" ,"bag","dag" ,"dig"],
+                               "index" :8,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom27.png"
+                                        },
+                               {"que":"she spent considerable amount of time ---- the ---- but I still do not see too much of an improvement.",
+                                "ans": "learning the ropes",
+                               "half_ans" : "---- the ----",
+                                "buttons": [ "teaching","laddering","rapes", "learning", "knowing","ropes","sack","ladder"],
+                               "index" :7,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom28.png"
+                                        },
+                              {"que":"the manager believes the development may become a ---- ---- that fails to attract suitable tenants.",
+                                "ans": "white elephant",
+                               "half_ans" : "---- ----",
+                                "buttons": [ "elegant","yellow","alligator", "elephant", "black" ," dinosaur","white" ,"giraffe"],
+                               "index" :9,
+                               //"image": "img/no_img.JPG"
+                               "image": "img/idiom29.png"
+                        },
+                        {"que":"he works closely with his international suppliers to ensure that the ingredients are always ---- to -----.",
+                        "ans": "up to scratch",
+                       "half_ans" : "---- to -----",
+                        "buttons": ["under","catch","within","up","match","scramble","scream","scratch"],
+                       "index" :15,
+                       "image": "img/idiom30.png"
+                        }
+        
                        
                             ]          
        

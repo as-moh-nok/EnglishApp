@@ -7,6 +7,24 @@ body{
   background-size: cover; 
  
 }
+
+.mian-text{
+  color: #C7CED3;
+  font-weight: bold;
+}
+
+.main_btn{
+  background-color: #FFC000;
+  color: #243948;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 15px;
+  height:45px ;
+  width:95% ;
+}
+/*
 .navbar {
   display: flex;
   align-items: center;
@@ -36,7 +54,50 @@ body{
 .navbar button:hover {
   color: #ccc;
 }
+*/
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #2B3648;
+  color: #A1D5E3;
+  height: 60px;
+  padding: 5px 20px;
+}
 
+.navbar img {
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50;
+}
+
+.navbar button {
+  font-weight: bold;
+  color: #A1D5E3;
+  background-color: #435465;
+  font-size: 13px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.navbar button:hover {
+  color: #ccc;
+}
+
+.navbar-heart {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-heart img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.navbar-heart span {
+  font-size: 16px;
+} 
 
 
  #status_img {
@@ -66,16 +127,33 @@ body{
 
 
 
-#next_btn{
-  background-color: #FFC000;
-  color: #243948;
-  border-radius: 40px;
-   font-weight: bold;
+
+#next_btn{   
   margin-top: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 6px;
   height:45px ;
   width:95% ;
-
 }
 
+/* text   */
+.welcome-text {
+  font-family: 'Your Special Font', sans-serif;
+  font-size: 55px;
+  margin-top: 60px;
+  margin-bottom: 5px;
+}
+
+.link{
+  color: #FFC000;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.learn-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
