@@ -35,7 +35,7 @@
 </head>
 <body>
   <div class="container ">
-    <a  href="index.html" class="back-icon">
+    <a  href="index.php" class="back-icon">
       <img src="img/back_icon.png" style="width: 40px;">
     </a>
     <div >

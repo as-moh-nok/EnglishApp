@@ -1,16 +1,17 @@
 body{
     font-family: vazir;
-    font-weight: bold;
+    
     background-color:#1C2230;
-      background-attachment: fixed; 
-  background-repeat: no-repeat;
-  background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-size: cover; 
  
 }
 
-.mian-text{
-  color: #C7CED3;
-  font-weight: bold;
+.main-text{
+  color: #C3CDB5;
+  
+  
 }
 
 .main_btn{
@@ -24,37 +25,7 @@ body{
   height:45px ;
   width:95% ;
 }
-/*
-.navbar {
-  display: flex;
-  align-items: center;
-  background-color: #2B3648;
-  color: #A1D5E3;
-  height: 60px;
-  padding: 0 20px;
-}
 
-.navbar img {
-  height: 41px;
-  margin-right: 10px;
-  border-radius: 50%;
-}
-
-.navbar button {
-  font-weight: bold;
-  color: #A1D5E3;
-  background-color: #435465;
-  font-size: 16px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.navbar button:hover {
-  color: #ccc;
-}
-*/
 .navbar {
   display: flex;
   align-items: center;
@@ -112,7 +83,7 @@ body{
   padding:3px;
   border:1px ;
   color: #C7CED3;
-  font-weight: bold;
+  
 }
 .btnn{
     background-color: #556076;  
@@ -137,10 +108,17 @@ body{
 
 /* text   */
 .welcome-text {
-  font-family: 'Your Special Font', sans-serif;
+  font-family: clensey;
   font-size: 55px;
   margin-top: 60px;
   margin-bottom: 5px;
+  font-weight:bold;
+}
+#follow-text {
+  font-family: clensey;
+  font-size: 27px;
+  font-weight:bold;
+  
 }
 
 .link{
@@ -156,4 +134,5 @@ body{
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 
